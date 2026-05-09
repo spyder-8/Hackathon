@@ -15,4 +15,9 @@ public class WebsiteController {
     public String login() {
         return "login";
     }
+
+    @GetMapping("/news")
+    public String news() {
+        return "news";
+    }
 }
