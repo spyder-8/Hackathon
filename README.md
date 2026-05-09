@@ -1,2 +1,2 @@
 # Hackathon
-ARG for the hackathon
+ARG for the kenthackit hackathon
