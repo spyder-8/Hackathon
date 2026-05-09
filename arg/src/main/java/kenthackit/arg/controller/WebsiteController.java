@@ -52,6 +52,36 @@ public class WebsiteController {
         return "told";
     }
 
+    @GetMapping("/do")
+    public String doPage() {
+        return "do";
+    }
+
+    @GetMapping("/you")
+    public String you() {
+        return "you";
+    }
+
+    @GetMapping("/know")
+    public String know() {
+        return "know";
+    }
+
+    @GetMapping("/what-damage")
+    public String whatDamage() {
+        return "what-damage";
+    }
+
+    @GetMapping("/youve")
+    public String youve() {
+        return "youve";
+    }
+
+    @GetMapping("/done")
+    public String done() {
+        return "done";
+    }
+
     @GetMapping("/black")
     public String black() {
         return "black";
