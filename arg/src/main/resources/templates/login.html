@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+    <head>
+        <title>
+            ARG Game - Login
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" th:href="@{/style.css}">
+
+    </head>
+    <body>
+        <div class="d-flex justify-content-center align-items-center vh-100">
+            <div class="card p-4" style="width: 800px">
+                <h1 class="text-center mb-4">
+                    Login to ARG Game
+                </h1>
+
+                <!-- Displays error message if login fails -->
+                 <div th:if="${param.error}" class="alert alert-danger">
+                    Invalid username or password.
+                 </div>
+
+                 <!-- Displays logout message -->
+                  <div th:if="${param.logout}" class="alert alert-success">
+                    You have been logged out successfully.
+                  </div>
+
+                  <form th:action="@{/login}" method="post">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">
+                            Username
+                        </label>
+                        <input type="text" id="username" name="username" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">
+                            Password
+                        </label>
+                        <input type="password" id="password" name="password" class="form-control" required />
+                    </div>
+                    <button class="btn btn-primary w-100" type="submit">
+                        Login
+                    </button>
+                  </form>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
+</html>
