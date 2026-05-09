@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (guessInput) {
         guessInput.addEventListener('input', () => {
             if (guessInput.value === 'This is a secret message') {
-                window.location.href = 'http://localhost:8080/success';
+                window.location.href = 'http://78.141.238.111:8080/success';
             }
         })
     }
