@@ -16,6 +16,11 @@ public class WebsiteController {
         return "login";
     }
 
+    @GetMapping("/success")
+    public String success() {
+        return "success";
+    }
+
     @GetMapping("/news")
     public String news() {
         return "news";
