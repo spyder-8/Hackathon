@@ -23,37 +23,29 @@ async function decrypt(ciphertextBase64, ivBase64, keyString) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const container = document.getElementById('encrypted-data');
-    const ciphertext = container?.dataset.ciphertext;
-    const iv = container?.dataset.iv;
-    const key = SECRET_KEY;
-    
-    const decryptedElement = document.getElementById("decrypted");
-    if (!decryptedElement) {
-        console.error("Decrypted element not found");
-        return;
-    }
-    
-    if (!ciphertext || !iv) {
-        console.error("Encrypted data not found");
-        decryptedElement.textContent = "Encrypted data missing.";
-        return;
-    }
-    
-    try {
-        const decryptedText = await decrypt(ciphertext, iv, key);
-        decryptedElement.textContent = decryptedText;
-    } catch (error) {
-        console.error("Decryption failed: ", error);
-        decryptedElement.textContent = "Failed to decrypt.";
-    }
-
     const guessInput = document.getElementById('user-guess');
     if (guessInput) {
-        guessInput.addEventListener('input', () => {
-            if (guessInput.value === 'This is a secret message') {
-                window.location.href = 'https://78.141.238.111:8080/success';
+        guessInput.addEventListener('input', async () => {
+            const guess = guessInput.value;
+            if (guess.trim()) {
+                try {
+                    const response = await fetch('/check-guess', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ guess }),
+                    });
+                    if (response.ok) {
+                        const result = await response.json();
+                        if (result.success) {
+                            window.location.href = '/success';
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error checking guess:', error);
+                }
             }
-        })
+        });
     }
 });

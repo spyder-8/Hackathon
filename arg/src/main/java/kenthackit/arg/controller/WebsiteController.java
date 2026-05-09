@@ -3,6 +3,10 @@ package kenthackit.arg.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import java.util.Map;
 
 import kenthackit.arg.service.EncryptionService;
 
@@ -82,8 +86,11 @@ public class WebsiteController {
         return "done";
     }
 
-    @GetMapping("/black")
-    public String black() {
-        return "black";
-    }
+    @PostMapping("/check-guess")
+    @ResponseBody
+    public Map<String, Boolean> checkGuess(@RequestBody Map<String, String> payload) {
+        String guess = payload.get("guess");
+        boolean success = "This is a secret message".equals(guess);
+        return Map.of("success", success);
+        }
 }
