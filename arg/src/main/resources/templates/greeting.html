@@ -18,25 +18,30 @@
         class="hidden-image"
         data-hiddenattribute="thisishidden"
         data-secret="this is a secret"
-        data-id="1245">
+        data-id="1245"
+        style="display: block; margin: auto">
             </div>
+        </div>
+        <div class="row">
             <div class="col">
                 <!-- Clue here -->
                  <br>
                  <br>
-        <audio alt="my-secret-key" autoplay controls>
-            <source th:src="@{/voice.mp3}" type="audio/mpeg">
+        <audio alt="my-secret-key" autoplay controls style="display: block; margin: auto">
+            <source th:src="@{/voice.mp3}" type="audio/mpeg" style="display: block; margin: auto">
             Your browser does not support audio files.
         </audio>
         <br>
         <br>
-        <p><span th:text="${encrypted}"></span></p>
-        <p><span th:text="${iv}"></span></p>
+        <p style="text-align: center"><span th:text="${encrypted}" style="display: block; margin: auto"></span></p>
+        <p style="text-align: center"><span th:text="${iv}" style="display: block; margin: auto"></span></p>
         <div id="encrypted-data" 
         th:attr="data-ciphertext=${encrypted}, data-iv=${iv}" 
         style="display: none"></div>
         <p id="decrypted" style="display: none"></p>
-        <input type="text" id="user-guess" class="form-control">
+        <input type="text" id="user-guess" class="form-control" style="display: block; margin: auto">
+        <br>
+        <br>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
