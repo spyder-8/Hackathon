@@ -18,19 +18,8 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(auth -> auth
-            .requestMatchers("/login", "/css/**", "/js/**", "/images/**", "/static/**").permitAll()
-            .requestMatchers("/news").authenticated()
+            .requestMatchers("/news").permitAll()
             .anyRequest().denyAll()
-        )
-        .formLogin(form -> form
-            .loginPage("/login")
-            .defaultSuccessUrl("/news", true)
-            .failureUrl("/login?error=true")
-            .permitAll()
-        )
-        .logout(logout -> logout
-            .logoutSuccessUrl("/login?logout=true")
-            .permitAll()
         );
         
         return http.build();
