@@ -21,7 +21,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(auth -> auth
             .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-            .requestMatchers("/login", "/stop", "/doing", "/what", "/youre", "/told", "/secret", "/css/**", "/js/**", "/images/**", "/static/**").permitAll()
+            .requestMatchers("/login", "/style.css", "/greeting-style.css", "/stop", "/doing", "/what", "/youre", "/told", "/secret", "/css/**", "/js/**", "/images/**", "/static/**").permitAll()
             .anyRequest().authenticated()
         )
         .formLogin(form -> form
@@ -41,6 +41,6 @@ public class SecurityConfig {
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring()
-            .requestMatchers("/css/**", "/js/**", "/images/**", "/static/**", "/favicon.ico");
+            .requestMatchers("/style.css", "/favicon.ico", "/css/**", "/js/**", "/images/**");
     }
 }
