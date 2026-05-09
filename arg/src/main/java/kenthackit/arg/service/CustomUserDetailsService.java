@@ -13,7 +13,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return User.builder()
             .username("user")
-            .password("$2a$12$D8xK492EVZRDjr..ZPTiEOkuciCGnJlACwltFMPyN9ONI8gqSPAfq")
+            .password("$2a$12$Hxlf3fFJXsJUoFBLPlq7iuuwkXMPycYZTJNawvKMqBv6RL1APuVMW")
             .build();
     }
 }
