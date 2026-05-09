@@ -86,6 +86,11 @@ public class WebsiteController {
         return "done";
     }
 
+    @GetMapping("/black")
+    public String black() {
+        return "black";
+    }
+
     @PostMapping("/check-guess")
     @ResponseBody
     public Map<String, Boolean> checkGuess(@RequestBody Map<String, String> payload) {
