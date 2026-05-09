@@ -12,7 +12,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return User.builder()
-            .username("user")
+            .username("kiy")
             .password("$2a$12$Hxlf3fFJXsJUoFBLPlq7iuuwkXMPycYZTJNawvKMqBv6RL1APuVMW")
             .build();
     }
