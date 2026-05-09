@@ -1,28 +1,18 @@
-async function getKey(password) {
-    const enc = new TextEncoder();
-    const keyMaterial = await window.crypto.subtle.importKey(
-        "raw",
-        enc.encode(password),
-        "PBKDF2",
-        false,
-        ["deriveKey"]
-    );
-    return window.crypto.subtle.deriveKey({
-        name: "PBKDF2",
-        salt: enc.encode("fixed-salt"),
-        iterations: 100000,
-        hash: "SHA-256"
-    },keyMaterial, {
-        name: "AES-GCM",
-        length: 256
-    }, false, ["decrypt"]);
-}
+import { SECRET_KEY } from './config.js';
 
-async function decrypt(ciphertextBase64, ivBase64, password) {
-    const enc = new TextEncoder();
+async function decrypt(ciphertextBase64, ivBase64, keyString) {
     const data = Uint8Array.from(atob(ciphertextBase64), c => c.charCodeAt(0));
     const iv = Uint8Array.from(atob(ivBase64), c => c.charCodeAt(0));
-    const key = await getKey(password);
+    
+    // Import the fixed key
+    const keyData = new TextEncoder().encode(keyString);
+    const key = await window.crypto.subtle.importKey(
+        "raw",
+        keyData,
+        "AES-GCM",
+        false,
+        ["decrypt"]
+    );
 
     const decrypted = await window.crypto.subtle.decrypt({
         name: "AES-GCM",
@@ -33,16 +23,37 @@ async function decrypt(ciphertextBase64, ivBase64, password) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const container = document.getElementById("encrypted-data");
-    const ciphertext = container.dataset.ciphertext;
-    const iv = container.dataset.iv;
-    const password = "user-shared-password";
+    const container = document.getElementById('encrypted-data');
+    const ciphertext = container?.dataset.ciphertext;
+    const iv = container?.dataset.iv;
+    const key = SECRET_KEY;
+    
+    const decryptedElement = document.getElementById("decrypted");
+    if (!decryptedElement) {
+        console.error("Decrypted element not found");
+        return;
+    }
+    
+    if (!ciphertext || !iv) {
+        console.error("Encrypted data not found");
+        decryptedElement.textContent = "Encrypted data missing.";
+        return;
+    }
     
     try {
-        const decryptedText = await decrypt(ciphertext, iv, password);
-        document.getElementById("decrypted").textContent = decryptedText;
+        const decryptedText = await decrypt(ciphertext, iv, key);
+        decryptedElement.textContent = decryptedText;
     } catch (error) {
         console.error("Decryption failed: ", error);
-        document.getElementById("decrypted").textContent = "Failed to decrypt.";
+        decryptedElement.textContent = "Failed to decrypt.";
+    }
+
+    const guessInput = document.getElementById('user-guess');
+    if (guessInput) {
+        guessInput.addEventListener('input', () => {
+            if (guessInput.value === 'This is a secret message') {
+                window.location.href = 'http://localhost:8080/success';
+            }
+        })
     }
 });
