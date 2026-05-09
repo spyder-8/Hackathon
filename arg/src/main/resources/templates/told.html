@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread: They found the dev... - The Abyss Boards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        p {
+            color: white;
+        }
+        .navbar-custom {
+            background-color: #1e1e1e;
+            border-bottom: 2px solid #6200ea;
+        }
+        .forum-header {
+            background-color: #2c2c2c;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #6200ea;
+        }
+        .post-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+        }
+        .user-panel {
+            background-color: #252525;
+            border-right: 1px solid #333;
+            padding: 15px;
+            text-align: center;
+        }
+        .user-avatar {
+            width: 80px;
+            height: 80px;
+            background-color: #333;
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #6200ea;
+        }
+        .post-content {
+            padding: 20px;
+        }
+        .post-meta {
+            font-size: 0.85rem;
+            color: #888;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .post-signature {
+            border-top: 1px dashed #444;
+            margin-top: 20px;
+            padding-top: 10px;
+            font-size: 0.8rem;
+            color: #666;
+            font-style: italic;
+        }
+        /* Style the required link */
+        a.myth-link {
+            color: #bb86fc;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px dotted #bb86fc;
+            transition: all 0.3s;
+        }
+        a.myth-link:hover {
+            color: #fff;
+            background-color: #6200ea;
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-controller"></i> The Abyss Boards</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Forums</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Lost Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Unsolved</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#" class="text-secondary">Home</a></li>
+                <li class="breadcrumb-item"><a href="#" class="text-secondary">Unsolved Internet Mysteries</a></li>
+                <li class="breadcrumb-item active text-light" aria-current="page">They found the dev of that old missing RPG...</li>
+            </ol>
+        </nav>
+
+        <div class="forum-header">
+            <h3><i class="bi bi-chat-square-text-fill me-2 text-primary"></i> They found the dev of that old missing RPG...</h3>
+            <span class="badge bg-danger">Unsolved</span> <span class="badge bg-secondary">Game Dev</span>
+        </div>
+
+        <!-- Post 1 (OP) -->
+        <div class="card post-card shadow-sm">
+            <div class="row g-0">
+                <div class="col-md-2 user-panel d-none d-md-block">
+                    <div class="user-avatar"><i class="bi bi-person-fill"></i></div>
+                    <div class="fw-bold">PixelSleuth</div>
+                    <div class="text-muted small">Posts: 1,402</div>
+                    <span class="badge bg-warning text-dark mt-2">Veteran</span>
+                </div>
+                <div class="col-md-10">
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <i class="bi bi-clock"></i> Posted: October 14, 2018, 11:42 PM
+                        </div>
+                        <p>Hey everyone. Long time lurker, but I had to post this because I know a lot of us obsessed over this back in the day.</p>
+                        
+                        <p>Do you guys remember that incredibly ambitious indie RPG project from 2008? The one where the lead developer just randomly dropped off the face of the earth 6 months into development with zero explanation? The servers went down, the blog vanished, everything.</p>
+
+                        <p>Well, I was just reading a local King County news aggregate, and... they found him. Or rather, they found his remains. His name was <a href="https://simple.wikipedia.org/wiki/Mythology" class="myth-link" target="_blank">Elias Thorne</a>.</p>
+
+                        <p>But here is where it gets incredibly weird, and why I'm posting it on this board: Hikers found him in a subterranean bunker out in the woods. The door was welded shut <strong>from the inside</strong>. And according to the leaked info from the ME's office, there's no obvious cause of death. No trauma, no poison, nothing. Just weird "cellular degradation."</p>
+
+                        <p>What the hell was he doing out there? Was it related to the game's lore?</p>
+
+                        <div class="post-signature">
+                            "The truth is usually just a poorly compressed JPEG."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="card post-card shadow-sm">
+            <div class="row g-0">
+                <div class="col-md-2 user-panel d-none d-md-block">
+                    <div class="user-avatar"><i class="bi bi-robot"></i></div>
+                    <div class="fw-bold">GlitchHunter99</div>
+                    <div class="text-muted small">Posts: 341</div>
+                </div>
+                <div class="col-md-10">
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <i class="bi bi-clock"></i> Posted: October 15, 2018, 02:15 AM
+                        </div>
+                        <p>Wait, ARE YOU SERIOUS?! </p>
+                        <p>I still have the Alpha v0.4 files on an old hard drive somewhere. The lore in that game was always way too deep, almost like he was building a simulation rather than a game. There was a whole questline about a faction that "sealed themselves in iron roots to escape the unseen rot".</p>
+                        <p>Welded shut from the inside? That's terrifying. Has anyone tried looking at the game's code again to see if there are geographic coordinates hidden in the assets?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="card post-card shadow-sm">
+            <div class="row g-0">
+                <div class="col-md-2 user-panel d-none d-md-block">
+                    <div class="user-avatar" style="color: #ff5252;"><i class="bi bi-incognito"></i></div>
+                    <div class="fw-bold">NullVoid</div>
+                    <div class="text-muted small">Posts: 89</div>
+                </div>
+                <div class="col-md-10">
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <i class="bi bi-clock"></i> Posted: October 15, 2018, 04:30 AM
+                        </div>
+                        <p>@PixelSleuth - I dug up the actual police report from the KCSO archive (don't ask me how, but it's Case #2018-09-044-A).</p>
+                        
+                        <p>You left out the craziest detail. When the police breached the bunker, their radios and compasses stopped working. There was a localized magnetic anomaly inside the structure that fried all of the hard drives they found at the scene. Whatever he was working on down there, it's permanently erased.</p>
+                        
+                        <p>Or... maybe the anomaly is what killed him?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

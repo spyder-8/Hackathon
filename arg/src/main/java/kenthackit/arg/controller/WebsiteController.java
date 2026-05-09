@@ -27,8 +27,33 @@ public class WebsiteController {
         return "success";
     }
 
-    @GetMapping("/news")
-    public String news() {
-        return "news";
+    @GetMapping("/stop")
+    public String stop() {
+        return "stop";
+    }
+
+    @GetMapping("/doing")
+    public String doing() {
+        return "doing";
+    }
+
+    @GetMapping("/what")
+    public String what() {
+        return "what";
+    }
+
+    @GetMapping("/youre")
+    public String youre() {
+        return "youre";
+    }
+
+    @GetMapping("/told")
+    public String told() {
+        return "told";
+    }
+
+    @GetMapping("/black")
+    public String black() {
+        return "black";
     }
 }

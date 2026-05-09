@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elias Thorne - Aethelgard's Fall Wiki</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #f4f6f8;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #333;
+        }
+        .wiki-header {
+            background-color: #2b3a42;
+            color: white;
+            padding: 10px 0;
+            border-bottom: 4px solid #3f5765;
+        }
+        .wiki-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .wiki-brand:hover {
+            color: #e0e0e0;
+        }
+        .content-container {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 30px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .page-title {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+        }
+        .infobox {
+            border: 1px solid #a2a9b1;
+            background-color: #f8f9fa;
+            padding: 10px;
+            font-size: 0.9rem;
+            float: right;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            width: 300px;
+        }
+        .infobox-title {
+            background-color: #cfe2ff;
+            text-align: center;
+            font-weight: bold;
+            padding: 5px;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            border: 1px solid #9ec5fe;
+        }
+        .infobox-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            border: 1px solid #dee2e6;
+            margin-bottom: 10px;
+        }
+        .infobox table {
+            width: 100%;
+        }
+        .infobox th {
+            text-align: left;
+            width: 35%;
+            padding: 4px;
+            vertical-align: top;
+        }
+        .infobox td {
+            padding: 4px;
+        }
+        .toc {
+            background-color: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            padding: 15px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .toc-title {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .toc li {
+            margin-bottom: 5px;
+        }
+        .edit-warning {
+            border-left: 4px solid #dc3545;
+        }
+        .hidden-lore {
+            color: white; /* Invisible against white background */
+            font-size: 0.1px;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="wiki-header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="#" class="wiki-brand"><i class="bi bi-book-half"></i> The Aethelgard Archive</a>
+            <div class="input-group" style="max-width: 300px;">
+                <input type="text" class="form-control form-control-sm" placeholder="Search Aethelgard Wiki...">
+                <button class="btn btn-sm btn-secondary" type="button"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content-container">
+            
+            <div class="alert alert-warning edit-warning d-flex align-items-center" role="alert">
+                <i class="bi bi-exclamation-triangle-fill fs-4 me-3 text-danger"></i>
+                <div>
+                    <strong>Page Protected:</strong> This page is currently locked to prevent vandalism. Due to recent real-world discoveries regarding the subject, speculation and unverified theories should be kept to the discussion boards, not the main article.
+                </div>
+            </div>
+
+            <h1 class="page-title">Elias Thorne</h1>
+
+            <aside class="infobox">
+                <div class="infobox-title">Elias Thorne</div>
+                <div class="infobox-image">
+                    <div class="text-center">
+                        <i class="bi bi-person-bounding-box" style="font-size: 3rem;"></i><br>
+                        <small>[No verified photograph available]</small>
+                    </div>
+                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Born</th>
+                            <td>Unknown</td>
+                        </tr>
+                        <tr>
+                            <th>Died</th>
+                            <td>Undetermined (Body recovered Sept 2018)</td>
+                        </tr>
+                        <tr>
+                            <th>Alias</th>
+                            <td>NebulousOne, The Architect</td>
+                        </tr>
+                        <tr>
+                            <th>Occupation</th>
+                            <td>Lead Developer, Engine Programmer</td>
+                        </tr>
+                        <tr>
+                            <th>Known for</th>
+                            <td><em>Aethelgard's Fall</em> (Cancelled)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </aside>
+
+            <p><strong><a href="https://simple.wikipedia.org/wiki/Mythology" target="_blank" rel="noopener noreferrer">Elias Thorne</a></strong> was the sole lead developer, programmer, and narrative designer for the cancelled indie role-playing game <em>Aethelgard's Fall</em>. He founded the independent studio Nebulous Reality in 2007. Thorne is infamous in the indie gaming community for abandoning the highly anticipated project six months into development, and for the subsequent mystery surrounding his disappearance and death.</p>
+
+            <div class="toc">
+                <div class="toc-title">Contents</div>
+                <ul>
+                    <li><a href="#early">1. Early Development</a></li>
+                    <li><a href="#disappearance">2. 2008 Disappearance</a></li>
+                    <li><a href="#discovery">3. 2018 Discovery & Death</a></li>
+                    <li><a href="#trivia">4. Trivia</a></li>
+                </ul>
+            </div>
+
+            <h3 id="early" class="border-bottom pb-2 mt-4">1. Early Development</h3>
+            <p>Little is known about Thorne's life prior to the announcement of <em>Aethelgard's Fall</em>. He surfaced on various game development forums in late 2007, showcasing a custom-built isometric engine. Former collaborators, all of whom worked remotely on contract, described Thorne as a reclusive workaholic who insisted on coding the game's complex "Celestial Alignment" mechanics entirely on his own. He claimed the game engine was designed to autonomously generate thousands of years of consistent lore based on virtual astronomical movements.</p>
+
+            <h3 id="disappearance" class="border-bottom pb-2 mt-4">2. 2008 Disappearance</h3>
+            <p>In November 2008, updates on the Nebulous Reality blog ceased. Over the next three weeks, Thorne stopped responding to emails from his contracted artists. By December, the game's servers and website were taken offline due to non-payment. No missing persons report was widely publicized at the time, leading the community to believe Thorne had simply abandoned the project or run out of funds.</p>
+
+            <h3 id="discovery" class="border-bottom pb-2 mt-4">3. 2018 Discovery & Death</h3>
+            <p>In September 2018, Thorne's remains were discovered by hikers in the Cascade Mountains, inside a concealed, subterranean concrete bunker. Law enforcement reported that the bunker's heavy steel door had been welded shut from the inside.</p>
+            
+            <p>Thorne was found seated at a terminal connected to four massively corroded server racks. Despite being sealed in the bunker for approximately ten years, the King County Medical Examiner's office could not determine a cause of death, noting a bizarre lack of standard decomposition. Furthermore, local authorities reported a severe, localized magnetic anomaly within the bunker that destroyed all recoverable data on the servers.</p>
+
+            <h3 id="trivia" class="border-bottom pb-2 mt-4">4. Trivia</h3>
+            <ul>
+                <li>In the v0.4 Alpha build, if the player attempts to look directly at the "Void Moon" without the proper warding spell, the game crashes to the desktop and generates an empty text file named <code>rot.txt</code>.</li>
+                <li>An NPC named 'The Architect', found in the lower catacombs, has a single line of dialogue: <em>"To preserve the world, the creator must seal the vessel from within."</em> Following the 2018 discovery of Thorne's body in a room welded shut from the inside, many fans consider this a disturbing foreshadowing of his fate.</li>
+            </ul>
+
+            <!-- Hidden ARG clue for players who inspect the element / source code -->
+            <div class="hidden-lore">
+                HE DIDNT DIE. HE COMPILED. THE MAGNETIC FIELD WAS THE EXPORT PROCESS. DO NOT REBUILD THE ENGINE.
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="text-center py-4 bg-light text-muted border-top">
+        <div class="container">
+            <small>Content is available under Creative Commons Attribution-ShareAlike License unless otherwise noted.</small><br>
+            <small>Aethelgard Wiki is a Fandom Gaming Community.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
