@@ -15,7 +15,7 @@ public class WebsiteController {
 
     @GetMapping("/")
     public String greeting(ModelMap model) throws Exception {
-        var data = EncryptionService.encrypt("This is a secret message");
+        var data = EncryptionService.encrypt("https://youtu.be/6ZI0tYjUYdA");
         model.addAttribute("encrypted", data.get("ciphertext"));
         model.addAttribute("iv", data.get("iv"));
         return "greeting";
@@ -24,11 +24,6 @@ public class WebsiteController {
     @GetMapping("/login")
     public String login() {
         return "login";
-    }
-
-    @GetMapping("/success")
-    public String success() {
-        return "success";
     }
 
     @GetMapping("/stop")
@@ -91,11 +86,16 @@ public class WebsiteController {
         return "black";
     }
 
+    @GetMapping("/you-were-warned")
+    public String youWereWarned() {
+        return "you-were-warned";
+    }
+
     @PostMapping("/check-guess")
     @ResponseBody
     public Map<String, Boolean> checkGuess(@RequestBody Map<String, String> payload) {
         String guess = payload.get("guess");
-        boolean success = "This is a secret message".equals(guess);
+        boolean success = "https://youtu.be/6ZI0tYjUYdA".equals(guess);
         return Map.of("success", success);
         }
 }

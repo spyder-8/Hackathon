@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EncryptionService {
-    private static final String FIXED_KEY = "my-secret-key-16";
+    private static final String FIXED_KEY = "my-secret-key-16"; // placeholder for an actual key
 
     public static Map<String, String> encrypt(String plaintext) throws Exception {
         byte[] iv = new byte[12];

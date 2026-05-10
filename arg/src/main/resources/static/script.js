@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     if (response.ok) {
                         const result = await response.json();
                         if (result.success) {
-                            window.location.href = '/success';
+                            window.location.href = 'https://youtu.be/6ZI0tYjUYdA';
                         }
                     }
                 } catch (error) {
