@@ -46,6 +46,14 @@ async function articles() {
     await sleep(1000);
 
     window.open("https://78.141.238.111:8080/done");
+
+    await sleep(1000);
+
+    window.open("https://78.141.238.111:8080/you-were-warned");
+
+    await sleep(2000);
+
+    window.open("https://youtu.be/QxdLSLbM4ns");
 }
 
 document.addEventListener('DOMContentLoaded', () => {
