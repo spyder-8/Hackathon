@@ -53,7 +53,7 @@ async function articles() {
 
     await sleep(2000);
 
-    window.open("https://youtu.be/QxdLSLbM4ns");
+    window.open("https://youtu.be/4W6h2o5EUTU");
 }
 
 document.addEventListener('DOMContentLoaded', () => {
